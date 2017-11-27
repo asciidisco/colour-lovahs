@@ -1,0 +1,60 @@
+body {
+    background: #e2e1e0;
+    text-align: center;
+}
+
+.card {
+    font-family: Verdana, sans-serif;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 200px;
+    margin-top: 1rem;
+    width: 500px;
+    text-align: left;
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    bottom: 0
+    height: 100px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px green solid;
+}
+
+.mini--box {
+    flex: 1;
+    /*1 proportion*/
+    /*min-width: 20%;*/
+    /*25% of wrapper*/
+    min-height: 100px;
+    /*background: yellow;*/
+    border: 1px red solid;
+}
+
+.mini--box--two {
+    flex: 1;
+    /*1 proportion*/
+    min-width: 20%;
+    /*25% of wrapper*/
+    min-height: 100px;
+    /*background: yellow;*/
+    border: 1px red solid;
+}
+
+.right {
+    float: right;
+}
+
+.big-number {
+    font-size: 1.05em;
+}
+
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
