@@ -15,25 +15,29 @@ function reqListener () {
    // item.colors loop:
    //   variable += 'individual box markup'
 
-let colorboxMarkup;
+let colorboxMarkup = '';
 
 var arrayLength = item.colors.length;
 for (var i = 0; i < arrayLength; i++) {
+    console.log(item.colors[i]);
     colorboxMarkup += `<div class='mini--box' style="background:#${item.colors[i]};"></div>`
   }
 
-  // let colorLooper =
   // for (let value of item.colors) {
   //   value += 1;
-  //   console.log(value);
+  //   colorboxMarkup += `<div class='mini--box' style="background:#${item.colors[value]};"></div>`
   // }
 
 
    let markup = `
    <div class='card card-1'>
+   <div class='container'>
+
      ${item.title}
-     <span class='right'>
+     <span class='end'>
+
       ${item.dateCreated}
+
      </span>
      <p>
        <span class='big-number'> ${item.numViews} </span> views &nbsp;
@@ -41,6 +45,7 @@ for (var i = 0; i < arrayLength; i++) {
        <span class='big-number'> ${item.numComments} </span> comments &nbsp;
        <span class='big-number'> ${item.numHearts} </span> hearts &nbsp;
      </p>
+     </div>
      <div class='box'>
       ${colorboxMarkup}
        </div>
