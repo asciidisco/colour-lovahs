@@ -23,27 +23,17 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: 1px green solid;
 }
 
 .mini--box {
     flex: 1;
-    /*1 proportion*/
-    /*min-width: 20%;*/
-    /*25% of wrapper*/
     min-height: 100px;
-    /*background: yellow;*/
-    border: 1px red solid;
 }
 
 .mini--box--two {
     flex: 1;
-    /*1 proportion*/
     min-width: 20%;
-    /*25% of wrapper*/
     min-height: 100px;
-    /*background: yellow;*/
-    border: 1px red solid;
 }
 
 .right {
