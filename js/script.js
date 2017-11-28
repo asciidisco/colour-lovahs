@@ -3,6 +3,21 @@ oReq.addEventListener("load", reqListener);
 oReq.open("GET", "https://colorlovers.now.sh/api/palettes");
 oReq.send();
 
+// function formatDate(rawString) {
+//
+//   const d = new Date(rawString);
+//
+//   const day = d.getDate().toString();
+//   const month = (d.getMonth() + 1).toString();
+//   const yyyy = d.getFullYear();
+//
+//
+//   const dd = day.length === 1 ? '0' + day : day;
+//   const mm = month.length === 1 ? '0' + month : month;
+//
+//   return yyyy + '-' + mm + '-' + dd;
+// }
+
 function reqListener() {
     const results = JSON.parse(this.responseText);
     results.forEach(function(item) {
@@ -27,15 +42,25 @@ function reqListener() {
         //   value += 1;
         //   colorboxMarkup += `<div class='mini--box' style="background:#${item.colors[value]};"></div>`
         // }
-        var d = new Date(item.dateCreated);
-        // var n = d.toLocaleDateString(item.dateCreated);
-        console.log('DATE OBJECT', d.getDate());
-        var dateString = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`;
 
-        // >
-        // var date = new Date('2012-04-15T18:06:08-07:00')
-        // >
-        // date Mon Apr 16 2012 04: 06: 08 GMT + 0300(EEST)
+        // var d = new Date(item.dateCreated);
+        // console.log('DATE OBJECT', d.getDate());
+        // var dateString = `${d.getDate()}-${d.getMonth()+1}-${d.getFullYear()}`;
+
+
+
+  var d = new Date(item.dateCreated);
+
+  var day = d.getDate().toString();
+  var month = (d.getMonth() + 1).toString();
+
+  var yyyy = d.getFullYear();
+
+  var dd = day.length === 1 ? '0' + day : day;
+  var mm = month.length === 1 ? '0' + month : month;
+
+  var dateString = `${yyyy}-${mm}-${dd}`;
+
 
         let markup = `
    <div class='card card-1'>
@@ -45,6 +70,7 @@ function reqListener() {
      <span class='end'>
 
       ${dateString}
+      formatDate(item.dateCreated)
 
      </span>
      <p>
